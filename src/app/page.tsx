@@ -1,10 +1,12 @@
 "use client";
 
 import LogoLoader from "@/components/Loaders/LogoLoader";
+import LoginPage from "@/components/LoginPage/LoginPage";
 import { useEffect, useState } from "react";
+import Feed from "./pages/feed/page";
 
 export default function Home() {
-  const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
     const hasVisited = localStorage.getItem("hasVisited");
@@ -13,6 +15,8 @@ export default function Home() {
       // show loader on the first vist
       setShowLoader(true);
       localStorage.setItem("hasVisited", "true");
+    } else {
+      setShowLoader(false);
     }
 
     // clear flag on tab close
@@ -34,17 +38,17 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [showLoader]);
-
+  const user = true;
   return (
     <>
       {showLoader ? (
         <div>
           <LogoLoader />
         </div>
+      ) : !user ? (
+        <LoginPage />
       ) : (
-        <div>
-          <p className="text-white">Hello World</p>
-        </div>
+        <Feed />
       )}
     </>
   );

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
+config.autoAddCss = false;
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -29,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="bg-black"
+        className="bg-black min-h-screen"
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}

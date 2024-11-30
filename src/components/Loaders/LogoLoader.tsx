@@ -1,4 +1,5 @@
 import "../../app/globals.css";
+
 export default function LogoLoader() {
   return (
     <div className="flex justify-center items-center h-screen bg-black">
