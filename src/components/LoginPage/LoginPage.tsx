@@ -33,9 +33,11 @@ export default function LoginPage() {
             including Cookie Use.
           </p>
           <h4 className="text-2xl">Already have an account?</h4>
-          <button className="bg-white text-black rounded-2xl px-5 w-full my-5 font-bold">
-            Sign In
-          </button>
+          <Link href="/pages/login">
+            <button className="bg-white text-black rounded-2xl px-5 w-full my-5 font-bold">
+              Sign In
+            </button>
+          </Link>
         </div>
       </div>
     </>

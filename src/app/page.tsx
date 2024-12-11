@@ -2,6 +2,7 @@
 
 import LogoLoader from "@/components/Loaders/LogoLoader";
 import LoginPage from "@/components/LoginPage/LoginPage";
+import useAuth from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
 import Feed from "./pages/feed/page";
 
@@ -38,7 +39,7 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [showLoader]);
-  const user = true;
+  const { user } = useAuth();
   return (
     <>
       {showLoader ? (
